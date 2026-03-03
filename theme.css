@@ -170,6 +170,11 @@ settings:
   --background-primary-alt: #3b3f48;
   --background-secondary: #202225;
   --background-secondary-alt: #0c1018d1;
+  
+  /* Canvas/reading view background fix */
+  --canvas-background: #2f3136;
+  --canvas-color: #2f3136;
+  
   --text-normal: #bbc0c5;
   --text-graph: #dde0e5;
   --dot-graph: #bbc0c5;
@@ -182,6 +187,18 @@ settings:
   --text-title-h4: #a79645;
   --text-title-h5: #859676;
   --text-title-h6: #799097;
+
+  /* Obsidian native heading color variables (reading mode) */
+  --h1-color: #939bd6;
+  --h2-color: #EAE0BE;
+  --h3-color: #b78b60;
+  --h4-color: #a79645;
+  --h5-color: #859676;
+  --h6-color: #799097;
+  
+  /* Additional heading overrides */
+  --heading-color: inherit;
+  --inline-title-color: #939bd6;
   
   --text-link: #59a2c5;
   --text-a: #59a2c5;
@@ -220,41 +237,93 @@ settings:
   --inline-code-hover-intensity: 12px;
 }
 
+/* ===== READING MODE CONTAINER BACKGROUNDS ===== */
+.markdown-reading-view,
+.markdown-preview-view,
+.markdown-rendered,
+.markdown-preview-section,
+.view-content,
+.workspace-leaf-content[data-type='markdown'] .view-content {
+  background-color: #2f3136 !important;
+}
+
 /* ===== HEADINGS (Fixed Colors for Live Preview & Reading) ===== */
-.cm-s-obsidian .cm-header-1, .markdown-preview-view h1 {
-  font-weight: bold;
-  font-size: 28px;
-  color: var(--text-title-h1) !important;
+/* H1 */
+.cm-s-obsidian .cm-header-1,
+.markdown-preview-view h1,
+.markdown-rendered h1,
+.markdown-reading-view h1,
+.markdown-preview-section h1,
+.view-content h1,
+h1 {
+  font-weight: bold !important;
+  font-size: 28px !important;
+  color: #939bd6 !important;
 }
 
-.cm-s-obsidian .cm-header-2, .markdown-preview-view h2 {
-  font-weight: bold;
-  font-size: 26px;
-  color: var(--text-title-h2) !important;
+/* H2 */
+.cm-s-obsidian .cm-header-2,
+.markdown-preview-view h2,
+.markdown-rendered h2,
+.markdown-reading-view h2,
+.markdown-preview-section h2,
+.view-content h2,
+h2 {
+  font-weight: bold !important;
+  font-size: 26px !important;
+  color: #EAE0BE !important;
 }
 
-.cm-s-obsidian .cm-header-3, .markdown-preview-view h3 {
-  font-weight: bold;
-  font-size: 23px;
-  color: var(--text-title-h3) !important;
+/* H3 */
+.cm-s-obsidian .cm-header-3,
+.markdown-preview-view h3,
+.markdown-rendered h3,
+.markdown-reading-view h3,
+.markdown-preview-section h3,
+.view-content h3,
+h3 {
+  font-weight: bold !important;
+  font-size: 23px !important;
+  color: #b78b60 !important;
 }
 
-.cm-s-obsidian .cm-header-4, .markdown-preview-view h4 {
-  font-weight: bold;
-  font-size: 20px;
-  color: var(--text-title-h4) !important;
+/* H4 */
+.cm-s-obsidian .cm-header-4,
+.markdown-preview-view h4,
+.markdown-rendered h4,
+.markdown-reading-view h4,
+.markdown-preview-section h4,
+.view-content h4,
+h4 {
+  font-weight: bold !important;
+  font-size: 20px !important;
+  color: #a79645 !important;
 }
 
-.cm-s-obsidian .cm-header-5, .markdown-preview-view h5 {
-  font-weight: bold;
-  font-size: 18px;
-  color: var(--text-title-h5) !important;
+/* H5 */
+.cm-s-obsidian .cm-header-5,
+.markdown-preview-view h5,
+.markdown-rendered h5,
+.markdown-reading-view h5,
+.markdown-preview-section h5,
+.view-content h5,
+h5 {
+  font-weight: bold !important;
+  font-size: 18px !important;
+  color: #859676 !important;
 }
 
-.cm-s-obsidian .cm-header-6, .markdown-preview-view h6 {
-  font-weight: bold;
-  font-size: 16px;
-  color: var(--text-title-h6) !important;
+/* H6 */
+.cm-s-obsidian .cm-header-6,
+.markdown-preview-view h6,
+.markdown-rendered h6,
+.markdown-reading-view h6,
+.markdown-preview-section h6,
+.view-content h6,
+h6 {
+  font-weight: bold !important;
+  font-size: 16px !important;
+  color: #799097 !important;
 }
 
 /* ===== EDITING MODE - VERTICAL BULLET LINES (Restored from v01) ===== */
@@ -421,14 +490,14 @@ a:hover, .internal-link:hover {
 }
 
 /* ===== 🔥 INLINE CODE - CRISP POP EDITION ===== */
-/* Reading Mode */
-.markdown-rendered code,
+/* Reading Mode — scoped to inline code only (excludes <pre><code>) */
+.markdown-rendered :not(pre) > code,
 .markdown-rendered strong code {
   color: var(--inline-code-text-color) !important;
   background: var(--inline-code-bg-color) !important;
   border: 1px solid rgba(88, 201, 185, 0.35) !important;
   border-radius: 5px;
-  padding: 1.15em 3.45em !important;
+  padding: 0.15em 0.4em !important;
   text-shadow: 0 0 8px rgba(88, 201, 185, 0.6), 0 0 2px rgba(88, 201, 185, 0.3);
   -webkit-font-smoothing: antialiased;
   font-style: normal;
@@ -451,8 +520,8 @@ a:hover, .internal-link:hover {
 }
 
 /* ===== 🔥 INLINE CODE HOVER GLOW ===== */
-/* Reading Mode Hover */
-.markdown-rendered code:hover,
+/* Reading Mode Hover — scoped to inline code only */
+.markdown-rendered :not(pre) > code:hover,
 .markdown-rendered strong code:hover {
   cursor: pointer;
   text-shadow: 
@@ -471,29 +540,41 @@ a:hover, .internal-link:hover {
 }
 
 /* Smooth transitions for all inline code */
-.markdown-rendered code,
+.markdown-rendered :not(pre) > code,
 .markdown-rendered strong code,
 .cm-inline-code {
   transition: all 0.2s ease-in-out;
 }
 
 /* ===== 🔥 CODE BLOCKS - HIGH CONTRAST ===== */
+/* Code block containers */
 .markdown-rendered pre,
+.markdown-preview-view pre,
+.markdown-reading-view pre,
 .markdown-source-view.mod-cm6 .cm-scroller .cm-line.cm-activeLine {
   background-color: var(--code-bg) !important;
   color: var(--code-text) !important;
 }
 
+/* Code inside blocks */
 .markdown-rendered pre code,
+.markdown-preview-view pre code,
+.markdown-reading-view pre code,
 .markdown-source-view.mod-cm6 .cm-content {
   font-size: 0.9rem;
+  background: transparent !important;
+  color: var(--code-text) !important;
 }
 
-.markdown-rendered pre {
+/* Code block styling */
+.markdown-rendered pre,
+.markdown-preview-view pre,
+.markdown-reading-view pre {
   border: 1px solid var(--code-border);
   border-radius: 8px;
   padding: 0.9rem 1rem;
   box-shadow: 0 0 0 1px rgba(255,255,255,0.02);
+  background-color: var(--code-bg) !important;
 }
 
 .markdown-rendered pre::-webkit-scrollbar { height: 6px; }
