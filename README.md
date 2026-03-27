@@ -98,7 +98,7 @@ MIT License — Free to use, modify, and distribute.
 
 ## 🙏 Credits
 
-Built by **Kevork @ Nexacrawl**  
+Built by **Kev @ Nexacrawl**  
 Designed for developers, AI enthusiasts, and terminal junkies who refuse to stare at bland UIs.
 
 **Star ⭐ this repo if it makes your notes less ugly.**
