@@ -1,6 +1,8 @@
 # 🔗 Connect Da Dots — Dark Obsidian Theme
 
 > **See your notes connect.** Vertical bullet relationship lines. Glowing inline code. A dark theme that makes outlines actually readable.
+>
+> **Submission status:** resubmission prep is in progress for the Obsidian Community Themes directory.
 
 <div align="center">
   <img src="images/connectdadots.jpg" alt="Connect Da Dots Theme Banner" width="100%">
@@ -37,10 +39,10 @@ Most Obsidian themes treat lists as flat text. **Connect Da Dots** draws **verti
 
 ## 📦 Installation
 
-### From Obsidian Community Themes (coming soon)
+### From Obsidian Community Themes (after approval)
 1. Go to `Settings → Appearance → Themes → Manage`
 2. Search **"Connect Da Dots"**
-3. Click **Use** – done.
+3. Click **Use**.
 
 ### Manual install (for now)
 1. Download `theme.css` and `manifest.json`
@@ -65,7 +67,7 @@ Go to `Settings → Theme → Connect Da Dots` to tweak:
 | **Inline Code Colors** | Text + background, editor vs reading mode |
 | **Hover Glow** | Color + intensity (from subtle to WOW) |
 
-No `!important` hacking required. All variables are built into the theme.
+Most common colors and effects are exposed through built-in theme settings, so you can customize the theme without editing CSS.
 
 ---
 
@@ -116,7 +118,7 @@ I chose to ship this as a **v1.0** because it’s already useful for 90% of use 
 Found a bug? Open an issue.  
 Want to add light mode or better 4-level lines? PRs are welcome.
 
-**Repo:** [github.com/Kevork-Nexacrawl-dev/obsidian-connect-da-dots](https://github.com/Kevork-Nexacrawl-dev/obsidian-connect-da-dots)
+**Repo:** [github.com/Kevork-Nexacrawl-dev/obsidian-theme-Connect-Da-Dots](https://github.com/Kevork-Nexacrawl-dev/obsidian-theme-Connect-Da-Dots)
 
 ---
 

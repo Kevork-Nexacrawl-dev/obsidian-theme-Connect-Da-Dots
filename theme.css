@@ -212,7 +212,7 @@ settings:
   --background-modifier-border: #92a1a17a;
   --blockquote-border: #6a7070;
   --text-accent: #ff9640ba;
-  --interactive-accent-rgb: #fe8019;
+  --interactive-accent-rgb: 254, 128, 25;
   --text-selection: #406488;
   
   /* 🔥 CUSTOM CODE BLOCK COLORS */
@@ -227,7 +227,7 @@ settings:
   --code-comment: #5c6370;
   --code-builtin: #ffb86c;
   --bullet-color: #bbc0c5;
-  --bullet-line-color: var(--bullet-line-color, rgba(100, 100, 120, 0.5));
+  --bullet-line-color: rgba(100, 100, 120, 0.5);
   /* 🔥 INLINE CODE VARIABLES */
   --inline-code-text-color: #e5dcba;
   --inline-code-bg-color: #44474E;
@@ -561,7 +561,7 @@ a:hover, .internal-link:hover {
 /* ===== CODE BLOCKS – LET OBSIDIAN HANDLE IT WITH OUR COLORS ===== */
 .markdown-rendered pre,
 .markdown-preview-view pre {
-  background-color: var(--code-background) !important;
+  background-color: var(--code-bg) !important;
   border: 1px solid var(--code-border) !important;
   border-radius: 8px !important;
   padding: 12px 16px !important;
@@ -569,8 +569,8 @@ a:hover, .internal-link:hover {
 
 .markdown-rendered pre code,
 .markdown-preview-view pre code {
-  color: var(--code-normal) !important;
-  font-size: var(--code-size) !important;
+  color: var(--code-text) !important;
+  line-height: 1.5;
 }
 
 /* ===== TABLES & IMAGES ===== */
