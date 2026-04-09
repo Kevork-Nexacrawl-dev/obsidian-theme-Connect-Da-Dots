@@ -2,7 +2,9 @@
 
 > **See your notes connect.** Vertical bullet relationship lines. Glowing inline code. A dark theme that makes outlines actually readable.
 
-![Theme Preview](Screenshot.png)
+<div align="center">
+  <img src="images/connectdadots.png" alt="Connect Da Dots Theme Banner" width="100%">
+</div>
 
 ## 🔍 Feature Deep Dive
 
@@ -20,7 +22,6 @@
 <div align="center">
   <img src="images/codeblocks.png" alt="Syntax highlighting in reading mode" width="80%">
 </div>
-
 
 ## ✨ Why this theme?
 
