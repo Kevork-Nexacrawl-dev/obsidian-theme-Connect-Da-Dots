@@ -1,0 +1,6 @@
+git init
+git add .
+git commit -m "Initial release: v1.0.0"
+git branch -M main
+git remote add origin https://github.com/Kevork-Nexacrawl-dev/obsidian-theme-Connect-Da-Dots.git
+git push -u origin main

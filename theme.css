@@ -114,7 +114,7 @@ settings:
     type: variable-color
     opacity: false
     format: hex
-    default: '#C9C9C9'
+    default: '#e5dcba'
 
   -
     id: inline-code-bg-color
@@ -132,7 +132,7 @@ settings:
     type: variable-color
     opacity: false
     format: hex
-    default: '#C9C9C9'
+    default: '#e5dcba'
 
   -
     id: inline-code-editor-bg
@@ -219,7 +219,7 @@ settings:
   --code-bg: #0b0d10;
   --code-border: #202632;
   --code-text: #e5e9f0;
-  --code-keyword: #ff6bcb;
+  --code-keyword: #c678dd;
   --code-string: #ffd479;
   --code-number: #9aedfe;
   --code-func: #7ee787;
@@ -229,9 +229,9 @@ settings:
   --bullet-color: #bbc0c5;
   --bullet-line-color: var(--bullet-line-color, rgba(100, 100, 120, 0.5));
   /* 🔥 INLINE CODE VARIABLES */
-  --inline-code-text-color: #C9C9C9;
+  --inline-code-text-color: #e5dcba;
   --inline-code-bg-color: #44474E;
-  --inline-code-editor-text: #C9C9C9;
+  --inline-code-editor-text: #e5dcba;
   --inline-code-editor-bg: #44474E;
   --inline-code-hover-glow: rgba(88, 201, 185, 0.8);
   --inline-code-hover-intensity: 12px;
@@ -490,9 +490,12 @@ a:hover, .internal-link:hover {
 }
 
 /* ===== 🔥 INLINE CODE - CRISP POP EDITION ===== */
-/* Reading Mode — scoped to inline code only (excludes <pre><code>) */
-.markdown-rendered :not(pre) > code,
-.markdown-rendered strong code {
+/* Scoped with .theme-dark / .cm-s-obsidian so the main rule wins cleanly over
+   Obsidian's default inline-code styles without needing a duplicate fallback block. */
+.theme-dark .markdown-rendered :not(pre) > code,
+.theme-dark .markdown-rendered strong code,
+.theme-dark .markdown-preview-view :not(pre) > code,
+.theme-dark .markdown-preview-view strong code {
   color: var(--inline-code-text-color) !important;
   background: var(--inline-code-bg-color) !important;
   border: 1px solid rgba(88, 201, 185, 0.35) !important;
@@ -504,14 +507,17 @@ a:hover, .internal-link:hover {
   font-weight: 500;
 }
 
-.markdown-rendered strong code {
+.theme-dark .markdown-rendered strong code,
+.theme-dark .markdown-preview-view strong code {
   font-weight: 700 !important;
   border-color: rgba(88, 201, 185, 0.55) !important;
   text-shadow: 0 0 10px rgba(88, 201, 185, 0.8), 0 0 3px rgba(88, 201, 185, 0.4);
 }
 
 /* Editing Mode (Live Preview) */
-.cm-inline-code {
+.theme-dark .cm-s-obsidian span.cm-inline-code,
+.theme-dark .cm-s-obsidian span.cm-inline-code.cm-strong,
+.theme-dark .markdown-source-view.mod-cm6 .cm-inline-code {
   color: var(--inline-code-editor-text) !important;
   background: var(--inline-code-editor-bg) !important;
   border-radius: 1px;
@@ -521,8 +527,10 @@ a:hover, .internal-link:hover {
 
 /* ===== 🔥 INLINE CODE HOVER GLOW ===== */
 /* Reading Mode Hover — scoped to inline code only */
-.markdown-rendered :not(pre) > code:hover,
-.markdown-rendered strong code:hover {
+.theme-dark .markdown-rendered :not(pre) > code:hover,
+.theme-dark .markdown-rendered strong code:hover,
+.theme-dark .markdown-preview-view :not(pre) > code:hover,
+.theme-dark .markdown-preview-view strong code:hover {
   cursor: pointer;
   text-shadow: 
     0 0 var(--inline-code-hover-intensity) var(--inline-code-hover-glow),
@@ -532,7 +540,8 @@ a:hover, .internal-link:hover {
 }
 
 /* Editing Mode Hover */
-.cm-inline-code:hover {
+.theme-dark .cm-s-obsidian span.cm-inline-code:hover,
+.theme-dark .markdown-source-view.mod-cm6 .cm-inline-code:hover {
   text-shadow: 
     0 0 var(--inline-code-hover-intensity) var(--inline-code-hover-glow),
     0 0 calc(var(--inline-code-hover-intensity) / 3) var(--inline-code-hover-glow);
@@ -540,58 +549,29 @@ a:hover, .internal-link:hover {
 }
 
 /* Smooth transitions for all inline code */
-.markdown-rendered :not(pre) > code,
-.markdown-rendered strong code,
-.cm-inline-code {
+.theme-dark .markdown-rendered :not(pre) > code,
+.theme-dark .markdown-rendered strong code,
+.theme-dark .markdown-preview-view :not(pre) > code,
+.theme-dark .markdown-preview-view strong code,
+.theme-dark .cm-s-obsidian span.cm-inline-code,
+.theme-dark .markdown-source-view.mod-cm6 .cm-inline-code {
   transition: all 0.2s ease-in-out;
 }
 
-/* ===== 🔥 CODE BLOCKS - HIGH CONTRAST ===== */
-/* Code block containers */
+/* ===== CODE BLOCKS – LET OBSIDIAN HANDLE IT WITH OUR COLORS ===== */
 .markdown-rendered pre,
-.markdown-preview-view pre,
-.markdown-reading-view pre,
-.markdown-source-view.mod-cm6 .cm-scroller .cm-line.cm-activeLine {
-  background-color: var(--code-bg) !important;
-  color: var(--code-text) !important;
+.markdown-preview-view pre {
+  background-color: var(--code-background) !important;
+  border: 1px solid var(--code-border) !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
 }
 
-/* Code inside blocks */
 .markdown-rendered pre code,
-.markdown-preview-view pre code,
-.markdown-reading-view pre code,
-.markdown-source-view.mod-cm6 .cm-content {
-  font-size: 0.9rem;
-  background: transparent !important;
-  color: var(--code-text) !important;
+.markdown-preview-view pre code {
+  color: var(--code-normal) !important;
+  font-size: var(--code-size) !important;
 }
-
-/* Code block styling */
-.markdown-rendered pre,
-.markdown-preview-view pre,
-.markdown-reading-view pre {
-  border: 1px solid var(--code-border);
-  border-radius: 8px;
-  padding: 0.9rem 1rem;
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.02);
-  background-color: var(--code-bg) !important;
-}
-
-.markdown-rendered pre::-webkit-scrollbar { height: 6px; }
-.markdown-rendered pre::-webkit-scrollbar-thumb { background: #3a4252; border-radius: 999px; }
-
-.theme-dark .markdown-rendered code[class*="language-"],
-.theme-dark .markdown-rendered pre[class*="language-"] {
-  text-shadow: 0 0 0.5px rgba(0,0,0,0.7);
-}
-
-.theme-dark .token.keyword, .cm-keyword { color: var(--code-keyword) !important; font-weight: 600; }
-.theme-dark .token.string, .cm-string { color: var(--code-string) !important; }
-.theme-dark .token.number, .theme-dark .token.boolean, .cm-number { color: var(--code-number) !important; }
-.theme-dark .token.function, .theme-dark .token.method, .cm-variable.cm-function { color: var(--code-func) !important; }
-.theme-dark .token.class-name, .cm-type, .cm-variable-2 { color: var(--code-class) !important; }
-.theme-dark .token.builtin, .theme-dark .token.property, .cm-property { color: var(--code-builtin) !important; }
-.theme-dark .token.comment, .cm-comment { color: var(--code-comment) !important; font-style: italic; }
 
 /* ===== TABLES & IMAGES ===== */
 th { font-weight: 800 !important; }
@@ -609,6 +589,7 @@ img { display: block; margin: 5px auto; }
 /* ===== CHECKBOXES ===== */
 .markdown-preview-view .task-list-item-checkbox {
   -webkit-appearance: none;
+  appearance: none;
   top: 3px !important;
   position: relative;
   width: 1.15em;

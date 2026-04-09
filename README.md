@@ -1,104 +1,135 @@
-# Connect Da Dots — Dark Obsidian Theme
+# 🔗 Connect Da Dots — Dark Obsidian Theme
 
-> A dark-first Obsidian theme with vertical bullet lines, glowing inline code, and developer-focused syntax highlighting.
+> **See your notes connect.** Vertical bullet relationship lines. Glowing inline code. A dark theme that makes outlines actually readable.
+
+![Theme Preview](Screenshot.png)
+
+## 🔍 Feature Deep Dive
+
+### 1. Vertical bullet lines (the main hook)
+
+<div align="center">
+  <img src="images/bulletpoints.png" alt="Nested bullet points with vertical connection lines" width="80%">
+</div>
+
+- **Editing mode** – Lines appear as you type, aligned with each indent level.
+- **Reading mode** – Clean, consistent lines that don't overlap.
+
+### 2. Code blocks that don't hurt your eyes
+
+<div align="center">
+  <img src="images/codeblocks.png" alt="Syntax highlighting in reading mode" width="80%">
+</div>
 
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![Obsidian](https://img.shields.io/badge/Obsidian-0.16.0+-purple)
-![Theme](https://img.shields.io/badge/mode-dark-black)
+## ✨ Why this theme?
 
----
+Most Obsidian themes treat lists as flat text. **Connect Da Dots** draws **vertical relationship lines** between parent bullets and their children – so you can visually trace connections in your outlines, meeting notes, or code docs.
 
-## ⚠️ Recommended: Install Style Settings Plugin
-
-This theme includes **20+ customization controls** (bullet colors, header colors, glow effects, etc.). Without the [Style Settings plugin](https://github.com/mgmeyers/obsidian-style-settings), you'll get the default colors only.
-
-**Install:** Obsidian → Settings → Community Plugins → Browse → Search "Style Settings" → Install
-
----
-
-## 🎨 Features
-
-### **Visual Enhancements**
-- **Vertical bullet lines** — Nested list items connect with relationship lines (customizable color + thickness via Style Settings)
-- **Glowing inline code** — Backtick code pops with neon borders and hover effects
-- **High-contrast syntax highlighting** — Keywords, strings, functions color-coded for max readability
-- **Custom header colors** — H1-H6 gradient (purple → gold → orange), fully customizable
-
-### **Editor Experience**
-- **CM6 cursor-safe bullet rendering** — No more jumping cursor when typing lists
-- **Smooth hover transitions** — Inline code, links, and UI elements respond cleanly
-- **Dark-only optimized** — No half-baked light mode—just pure dark aesthetics
-
-### **Customization (via Style Settings plugin)**
-- Bullet line color & thickness sliders
-- H1-H6 color pickers
-- Inline code text/background colors (reading + editing modes)
-- Hover glow intensity control
+- 🔗 **Vertical bullet lines** – Watch lines grow as you nest ideas (Editing + Reading modes)
+- 🎨 **Gradient headers** – H1 (cool purple) → H6 (muted teal) gives instant hierarchy
+- 💻 **Code that pops** – High-contrast dark blocks + syntax highlighting (Python, JS, etc.)
+- ✨ **Glowing inline code** – Subtle hover glow makes `code` feel interactive
+- 🎛️ **Fully customizable** – Tweak colors, line thickness, glow intensity right inside Obsidian Settings
 
 ---
 
 ## 📦 Installation
 
-### **Method 1: Community Themes (Recommended)**
-1. Open Obsidian → **Settings** → **Appearance**
-2. Click **Manage** under "Themes"
-3. Search for **"Connect Da Dots"**
-4. Click **Install** → Enable
+### From Obsidian Community Themes (coming soon)
+1. Go to `Settings → Appearance → Themes → Manage`
+2. Search **"Connect Da Dots"**
+3. Click **Use** – done.
 
-### **Method 2: Manual Install**
-1. Download `theme.css` from [releases](https://github.com/Kevork-Nexacrawl-dev/obsidian-theme-Connect-Da-Dots/releases)
-2. Navigate to your vault's `.obsidian/themes/` folder
-3. Create a folder: `Connect-Da-Dots`
-4. Place `theme.css` inside
-5. Open Obsidian → **Settings** → **Appearance** → Select "Connect Da Dots"
+### Manual install (for now)
+1. Download `theme.css` and `manifest.json`
+2. Copy them into your vault:  
+   `.obsidian/themes/Connect Da Dots/`
+3. Enable in `Settings → Appearance → Themes`
 
----
-
-## 🎛️ Recommended Setup
-
-**For full customization power:**
-1. Install the **Style Settings** plugin ([link](https://github.com/mgmeyers/obsidian-style-settings))
-2. Restart Obsidian
-3. Go to **Settings** → **Style Settings** → Find "Connect Da Dots"
-4. Adjust colors, line thickness, glow effects, etc.
-
-**Suggested fonts (optional):**
-- **UI Font:** Inter, SF Pro, Segoe UI
-- **Code Font:** Fira Code, JetBrains Mono, Source Code Pro
+> ⚠️ **Dark mode only.** Light mode isn't supported (but PRs are welcome).
 
 ---
 
-## 🖼️ Screenshots
+## 🎨 Customization (No CSS needed)
 
-> *(Add screenshots here once you push — I'll help you generate comparison shots)*
+This theme exposes **20+ settings** via Obsidian’s native theme settings panel.
 
----
+Go to `Settings → Theme → Connect Da Dots` to tweak:
 
-## 🛠️ Technical Details
+| Category | What you can change |
+|----------|---------------------|
+| **Bullet & Indent Lines** | Line color, thickness, bullet point color |
+| **Header Colors** | Each heading level (H1–H6) independently |
+| **Inline Code Colors** | Text + background, editor vs reading mode |
+| **Hover Glow** | Color + intensity (from subtle to WOW) |
 
-- **Base:** Custom-built (inspired by Comfort Smooth color palette)
-- **Compatibility:** Obsidian v0.16.0+
-- **Mode:** Dark only
-- **Dependencies:** None (Style Settings plugin optional but recommended)
-
----
-
-## 🐛 Known Issues
-
-None currently. Report bugs via [GitHub Issues](https://github.com/Kevork-Nexacrawl-dev/obsidian-theme-Connect-Da-Dots/issues).
+No `!important` hacking required. All variables are built into the theme.
 
 ---
 
-## 📜 License
+## 🔍 Feature Deep Dive
 
-MIT License — Free to use, modify, and distribute.
+### 1. Vertical bullet lines (the main hook)
+
+- **Editing mode** – Lines appear as you type, aligned with each indent level.
+- **Reading mode** – Clean, consistent lines that don’t overlap.
+- **Works best at 2–3 nesting levels** (beyond that, Obsidian’s dynamic indentation can cause slight misalignment – but the relationship is still clear).
+
+### 2. Code blocks that don’t hurt your eyes
+
+- Background: `#0b0d10` (deep void)
+- Text: `#e5e9f0` (soft white)
+- Syntax tokens:  
+  `#c678dd` (keywords) · `#ffd479` (strings) · `#9aedfe` (numbers) · `#7ee787` (functions)
+
+Inline code has a **glow on hover** – configurable intensity.
+
+### 3. Headers that guide
+
+| Level | Color (hex) | Size |
+|-------|-------------|------|
+| H1    | `#939bd6`   | 28px |
+| H2    | `#EAE0BE`   | 26px |
+| H3    | `#b78b60`   | 23px |
+| H4    | `#a79645`   | 20px |
+| H5    | `#859676`   | 18px |
+| H6    | `#799097`   | 16px |
+
+All bold, all readable even on small screens.
 
 ---
 
-## 🙏 Credits
+## 🐛 Known Limitations (transparent dev notes)
 
-Built by **Kev @ Nexacrawl**  
-Designed for developers, AI enthusiasts, and terminal junkies who refuse to stare at bland UIs.
+- **Nested bullet lines** – At 4+ levels, lines may shift slightly due to Obsidian’s dynamic indentation. Still usable, not pixel-perfect.
+- **Light mode** – Not supported. (I’m a dark theme person – sorry.)
+- **Reading mode code syntax** – Requires you to specify language after backticks (e.g. ` ```python `). Works flawlessly if you do.
 
-**Star ⭐ this repo if it makes your notes less ugly.**
+I chose to ship this as a **v1.0** because it’s already useful for 90% of use cases. Future versions may improve deep nesting.
+
+---
+
+## 🤝 Contributing
+
+Found a bug? Open an issue.  
+Want to add light mode or better 4-level lines? PRs are welcome.
+
+**Repo:** [github.com/Kevork-Nexacrawl-dev/obsidian-connect-da-dots](https://github.com/Kevork-Nexacrawl-dev/obsidian-connect-da-dots)
+
+---
+
+## 📄 License
+
+MIT – free to use, modify, share, or sell. Just don’t claim you wrote it from scratch.
+
+---
+
+## 🙏 Why I built this
+
+I’m a developer without a degree, building a GitHub portfolio that speaks louder than a diploma.  
+This theme is my way of solving a real problem (visualizing note relationships) while shipping production-quality CSS to thousands of users.
+
+If you like it, **star the repo** – it helps more than you know.
+
+---
