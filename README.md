@@ -3,7 +3,7 @@
 > **See your notes connect.** Vertical bullet relationship lines. Glowing inline code. A dark theme that makes outlines actually readable.
 
 <div align="center">
-  <img src="images/connectdadots.png" alt="Connect Da Dots Theme Banner" width="100%">
+  <img src="images/connectdadots.jpg" alt="Connect Da Dots Theme Banner" width="100%">
 </div>
 
 ## 🔍 Feature Deep Dive
