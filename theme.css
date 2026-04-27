@@ -304,7 +304,6 @@ h4 {
 .cm-s-obsidian .cm-header-5,
 .markdown-preview-view h5,
 .markdown-rendered h5,
-.markdown-reading-view h5,
 .markdown-preview-section h5,
 .view-content h5,
 h5 {
@@ -676,4 +675,171 @@ blockquote, p:not(:last-child) { padding-bottom: 0.7em; }
 .status-bar-item {
   font-family: var(--font-family-preview);
   font-size: 14px;
+}
+
+
+/* =========================================================
+   ===== 🖨️ PDF EXPORT — MATCH CONNECT DA DOTS DARK THEME =====
+   Hard-coded colors override Obsidian's default light print
+   context so the exported PDF mirrors the live dark editor.
+   ========================================================= */
+@media print {
+
+  /* --- PAGE & ROOT BACKGROUND --- */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body,
+  .markdown-preview-view,
+  .markdown-rendered,
+  .markdown-reading-view,
+  .markdown-preview-section {
+    background-color: #2f3136 !important;
+    color: #bbc0c5 !important;
+  }
+
+  /* --- HEADINGS --- */
+  h1 {
+    color: #939bd6 !important;
+    font-size: 28px !important;
+    font-weight: bold !important;
+  }
+
+  h2 {
+    color: #EAE0BE !important;
+    font-size: 26px !important;
+    font-weight: bold !important;
+  }
+
+  h3 {
+    color: #b78b60 !important;
+    font-size: 23px !important;
+    font-weight: bold !important;
+  }
+
+  h4 {
+    color: #a79645 !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+  }
+
+  h5 {
+    color: #859676 !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+  }
+
+  h6 {
+    color: #799097 !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+  }
+
+  /* --- BODY TEXT & PARAGRAPHS --- */
+  p, li, td, th, blockquote {
+    color: #bbc0c5 !important;
+  }
+
+  /* --- BOLD & ITALIC --- */
+  strong, b {
+    color: #9aac81 !important;
+    font-weight: bold !important;
+  }
+
+  em, i {
+    color: #FF8C42 !important;
+  }
+
+  /* --- LINKS --- */
+  a, .internal-link {
+    color: #59a2c5 !important;
+    text-decoration: none !important;
+  }
+
+  /* --- TABLES --- */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    background-color: #2f3136 !important;
+  }
+
+  thead {
+    border-bottom: 2.2px solid #92a1a17a !important;
+  }
+
+  th {
+    background-color: #202225 !important;
+    color: #EAE0BE !important;
+    font-weight: 800 !important;
+    border: 1px solid #464a53 !important;
+    padding: 6px 10px !important;
+  }
+
+  td {
+    background-color: #3b3f48 !important;
+    color: #bbc0c5 !important;
+    border: 1px solid #464a53 !important;
+    padding: 6px 10px !important;
+  }
+
+  tr:nth-child(even) td {
+    background-color: #2f3136 !important;
+  }
+
+  /* --- CODE BLOCKS --- */
+  pre {
+    background-color: #0b0d10 !important;
+    border: 1px solid #202632 !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+  }
+
+  pre code {
+    color: #e5e9f0 !important;
+    background: transparent !important;
+  }
+
+  /* --- INLINE CODE --- */
+  :not(pre) > code {
+    color: #e5dcba !important;
+    background: #44474E !important;
+    border: 1px solid rgba(88, 201, 185, 0.35) !important;
+    border-radius: 5px !important;
+    padding: 0.15em 0.4em !important;
+  }
+
+  /* --- BLOCKQUOTE --- */
+  blockquote {
+    border-left: 5px solid #6a7070 !important;
+    padding-left: 9px !important;
+    color: #a09b80 !important;
+    background: transparent !important;
+  }
+
+  /* --- HIGHLIGHTS --- */
+  mark {
+    background-color: #5dbcd2 !important;
+    color: #bbc0c5 !important;
+  }
+
+  /* --- TAGS --- */
+  a.tag {
+    background-color: #464a53 !important;
+    color: #bbc0c5 !important;
+    border-radius: 14px !important;
+    padding: 2px 10px !important;
+  }
+
+  /* --- HORIZONTAL RULE --- */
+  hr {
+    border-color: #92a1a17a !important;
+    opacity: 0.5 !important;
+  }
+
+  /* --- CHECKBOXES (reading-mode task items) --- */
+  .task-list-item-checkbox:checked::before {
+    color: #c1a601 !important;
+  }
 }
