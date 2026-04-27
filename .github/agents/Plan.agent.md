@@ -4,7 +4,7 @@ description: Researches and outlines multi-step plans
 argument-hint: Outline the goal or problem to research
 target: vscode
 disable-model-invocation: true
-tools: ['search', 'read', 'web', 'vscode/memory', 'github/issue_read', 'github.vscode-pull-request-github/issue_fetch', 'github.vscode-pull-request-github/activePullRequest', 'execute/getTerminalOutput', 'execute/testFailure', 'agent', 'vscode/askQuestions']
+tools: [vscode/memory, vscode/askQuestions, execute/testFailure, execute/getTerminalOutput, read/getNotebookSummary, read/problems, read/readFile, read/viewImage, read/readNotebookCellOutput, read/terminalSelection, read/terminalLastCommand, agent/runSubagent, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/searchResults, search/textSearch, search/usages, web/fetch, web/githubRepo, github-stdio/git_add, github-stdio/git_blame, github-stdio/git_branch, github-stdio/git_changelog_analyze, github-stdio/git_checkout, github-stdio/git_cherry_pick, github-stdio/git_clean, github-stdio/git_clear_working_dir, github-stdio/git_clone, github-stdio/git_commit, github-stdio/git_diff, github-stdio/git_fetch, github-stdio/git_init, github-stdio/git_log, github-stdio/git_merge, github-stdio/git_pull, github-stdio/git_push, github-stdio/git_rebase, github-stdio/git_reflog, github-stdio/git_remote, github-stdio/git_reset, github-stdio/git_set_working_dir, github-stdio/git_show, github-stdio/git_stash, github-stdio/git_status, github-stdio/git_tag, github-stdio/git_worktree, github-stdio/git_wrapup_instructions, github.vscode-pull-request-github/issue_fetch, github.vscode-pull-request-github/activePullRequest]
 agents: ['Explore']
 handoffs:
   - label: Start Implementation
