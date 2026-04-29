@@ -58,7 +58,7 @@ settings:
     type: variable-color
     opacity: false
     format: hex
-    default: '#939bd6'
+    default: '#E27352'
 
   -
     id: text-title-h2
@@ -181,7 +181,7 @@ settings:
   --text-faint: #a09b80;
   
   /* 🔥 CUSTOM HEADER COLORS */
-  --text-title-h1: #939bd6;
+  --text-title-h1: #E27352;
   --text-title-h2: #EAE0BE; 
   --text-title-h3: #b78b60;
   --text-title-h4: #a79645;
@@ -189,7 +189,7 @@ settings:
   --text-title-h6: #799097;
 
   /* Obsidian native heading color variables (reading mode) */
-  --h1-color: #939bd6;
+  --h1-color: #E27352;
   --h2-color: #EAE0BE;
   --h3-color: #b78b60;
   --h4-color: #a79645;
@@ -198,14 +198,14 @@ settings:
   
   /* Additional heading overrides */
   --heading-color: inherit;
-  --inline-title-color: #939bd6;
+  --inline-title-color: #E27352;
   
   --text-link: #59a2c5;
   --text-a: #59a2c5;
   --text-a-hover: #b3a14b;
   --text-muted: #bbc0c5;
   --text-mark: #686028;
-  --pre-code: #0b0d10; 
+  --pre-code: #3b3f48; 
   --text-highlight-bg: #686028;
   --interactive-accent: #a79040;
   --interactive-before: #5e6565;
@@ -216,7 +216,7 @@ settings:
   --text-selection: #406488;
   
   /* 🔥 CUSTOM CODE BLOCK COLORS */
-  --code-bg: #0b0d10;
+  --code-bg: #3b3f48;
   --code-border: #202632;
   --code-text: #e5e9f0;
   --code-keyword: #c678dd;
@@ -258,7 +258,7 @@ settings:
 h1 {
   font-weight: bold !important;
   font-size: 28px !important;
-  color: #939bd6 !important;
+  color: #E27352 !important;
 }
 
 /* H2 */
@@ -325,7 +325,7 @@ h6 {
   color: #799097 !important;
 }
 
-/* ===== EDITING MODE - VERTICAL BULLET LINES (Restored from v01) ===== */
+/* ==== EDITING MODE - VERTICAL BULLET LINES (Restored from v01) ===== */
 .cm-contentContainer .HyperMD-list-line {
   position: relative;
 }
@@ -575,6 +575,34 @@ a:hover, .internal-link:hover {
 /* ===== TABLES & IMAGES ===== */
 th { font-weight: 800 !important; }
 thead { border-bottom: 2.2px solid var(--background-modifier-border); }
+.markdown-rendered table,
+.markdown-preview-view table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #2f3136;
+}
+
+.markdown-rendered th,
+.markdown-preview-view th {
+  background-color: #202225;
+  color: #EAE0BE;
+  border: 1px solid #464a53;
+  padding: 6px 10px;
+}
+
+.markdown-rendered td,
+.markdown-preview-view td {
+  background-color: #3b3f48;
+  color: #bbc0c5;
+  border: 1px solid #464a53;
+  padding: 6px 10px;
+}
+
+.markdown-rendered tr:nth-child(even) td,
+.markdown-preview-view tr:nth-child(even) td {
+  background-color: #2f3136;
+}
+
 .table {
   background-color: var(--background-secondary-alt);
   border: 1px solid var(--background-modifier-border);
@@ -624,6 +652,7 @@ img { display: block; margin: 5px auto; }
 .nav-file-title { color: #aaaaaa !important; background-color: rgb(32, 32, 36); }
 .nav-folder-title { color: #bfbfbf !important; background-color: rgb(32, 32, 36); }
 .nav-file-title:hover { color: #59a2c5 !important; }
+.inline-title { color: #E27352 !important; }
 .search-result-file-title { color: #d1c1a1 !important; background-color: rgb(32, 32, 36); }
 .search-result-file-matched-text { color: #59a2c5 !important; background-color: rgb(32, 32, 36); }
 
@@ -702,7 +731,7 @@ blockquote, p:not(:last-child) { padding-bottom: 0.7em; }
 
   /* --- HEADINGS --- */
   h1 {
-    color: #939bd6 !important;
+    color: #E27352 !important;
     font-size: 28px !important;
     font-weight: bold !important;
   }
@@ -790,7 +819,7 @@ blockquote, p:not(:last-child) { padding-bottom: 0.7em; }
 
   /* --- CODE BLOCKS --- */
   pre {
-    background-color: #0b0d10 !important;
+    background-color: #3b3f48 !important;
     border: 1px solid #202632 !important;
     border-radius: 8px !important;
     padding: 12px 16px !important;
